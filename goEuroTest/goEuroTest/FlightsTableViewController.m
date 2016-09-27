@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self.tableView registerNib:[UINib nibWithNibName:@"GenericDataTableViewCell"
                                                bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"GenericDataTableViewCell"];

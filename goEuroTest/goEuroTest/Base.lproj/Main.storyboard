@@ -46,11 +46,11 @@
             </objects>
             <point key="canvasLocation" x="1506" y="-417"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="ccZ-xa-rAH">
             <objects>
                 <navigationController id="AIg-zU-yek" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="7tq-iZ-n9N"/>
+                    <tabBarItem key="tabBarItem" title="" id="7tq-iZ-n9N"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Agf-uO-qY8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -83,11 +83,11 @@
             </objects>
             <point key="canvasLocation" x="1506" y="386"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="6JQ-0A-Nhp">
             <objects>
                 <navigationController id="TFO-TQ-0yz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="KhU-s3-kNK"/>
+                    <tabBarItem key="tabBarItem" title="" id="KhU-s3-kNK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CAa-7R-3qM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
