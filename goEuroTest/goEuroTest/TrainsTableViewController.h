@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TrainsTableViewController : UIViewController
+@interface TrainsTableViewController : UITableViewController
 
 
 @end
