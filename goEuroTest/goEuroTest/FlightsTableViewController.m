@@ -8,8 +8,11 @@
 
 #import "FlightsTableViewController.h"
 #import "ConnectionManager.h"
+#import "GenericDataTableViewCell.h"
 
 @interface FlightsTableViewController ()
+
+@property (nonatomic, strong) NSMutableArray *flights;
 
 @end
 
@@ -17,11 +20,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
-    [[ConnectionManager sharedInstanceType] requestFlightsWithHandler:^(NSArray *response) {
+    [self.tableView registerNib:[UINib nibWithNibName:@"GenericDataTableViewCell"
+                                               bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:@"GenericDataTableViewCell"];
+    [self requestFlights];
+}
+
+#pragma mark - Request
+
+- (void)requestFlights {
+    
+    ConnectionManager *currentInstance = [ConnectionManager sharedInstanceType];
+    if (self.flights == nil) {
+        self.flights = [[NSMutableArray alloc] init];
+    }
+    
+    [currentInstance requestFlightsWithHandler:^(NSArray *response) {
+       
+        self.flights = [NSMutableArray arrayWithArray:response];
         
-        NSLog(@"%@",response);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+        
     }];
 }
 
@@ -29,12 +51,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return nil;
+    GenericDataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenericDataTableViewCell"];
+    GenericDataBO *temporalObject = self.flights[indexPath.row];
+    
+    cell.labelTime.text = [NSString stringWithFormat:@"%@ - %@", temporalObject.departureTime, temporalObject.arrivalTime];
+    cell.labelPrice.text = [NSString stringWithFormat:@"€ %@", temporalObject.priceInEuros];
+    
+    return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 0;
+    return (self.flights != nil) ? self.flights.count : 0;
 }
 
 @end
