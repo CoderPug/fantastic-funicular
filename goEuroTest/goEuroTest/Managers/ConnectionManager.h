@@ -10,4 +10,11 @@
 
 @interface ConnectionManager : NSObject
 
+@property (nonatomic, strong) NSURLSessionConfiguration *sessionConfig;
+@property (nonatomic, strong) NSURLSession *session;
+
++ (instancetype)sharedInstanceType;
+
+- (void)requestFlightsWithHandler:(void (^)(NSArray *response))completion;
+
 @end
