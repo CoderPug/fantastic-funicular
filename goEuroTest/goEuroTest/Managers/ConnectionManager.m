@@ -59,12 +59,25 @@ static NSString *const CMFlightsURL = @"https://api.myjson.com/bins/w60i";
     request.HTTPMethod = @"GET";
     
     NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request
-                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *errorA) {
                                                     
-                                                     if (error == nil) {
-                                                         NSLog(@"%@",data);
+                                                     if (errorA == nil) {
+                                                         NSError *errorB = nil;
+                                                         id responseElement = [NSJSONSerialization JSONObjectWithData:data
+                                                                                                                   options:0
+                                                                                                                     error:&errorB];
+                                                         if (errorB == nil) {
+                                                             if ([responseElement isKindOfClass:[NSArray class]]) {
+                                                                 NSArray *responseArray = responseElement;
+                                                                 completionFunction(responseArray);
+                                                             } else {
+                                                                 NSLog(@"ERROR: Response not an array");
+                                                             }
+                                                         } else {
+                                                             NSLog(@"ERROR: Can not convert Data into JSON");
+                                                         }
                                                      } else {
-                                                         NSLog(@"ERROR: URLSessionDataTask failed %@", [error localizedDescription]);
+                                                         NSLog(@"ERROR: URLSessionDataTask failed %@", [errorA localizedDescription]);
                                                      }
                                                  }];
     [task resume];
@@ -76,7 +89,7 @@ static NSString *const CMFlightsURL = @"https://api.myjson.com/bins/w60i";
     
     [self performRequestWithURL:CMFlightsURL
                      completion:^(NSArray *response) {
-                         
+                         completion(response);
                      }];
 }
 
