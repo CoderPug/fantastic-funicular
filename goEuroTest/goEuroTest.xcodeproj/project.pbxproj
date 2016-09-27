@@ -17,6 +17,8 @@
 		C108A7A91D9AFFA400AD8D82 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7A81D9AFFA400AD8D82 /* ConnectionManager.m */; };
 		C108A7AD1D9B094400AD8D82 /* GenericDataBO.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7AC1D9B094400AD8D82 /* GenericDataBO.m */; };
 		C108A7B01D9B0A4100AD8D82 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7AF1D9B0A4100AD8D82 /* Utils.m */; };
+		C108A7B51D9B108D00AD8D82 /* GenericDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7B31D9B108D00AD8D82 /* GenericDataTableViewCell.m */; };
+		C108A7B61D9B108D00AD8D82 /* GenericDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C108A7B41D9B108D00AD8D82 /* GenericDataTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		C108A7AC1D9B094400AD8D82 /* GenericDataBO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericDataBO.m; sourceTree = "<group>"; };
 		C108A7AE1D9B0A4100AD8D82 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		C108A7AF1D9B0A4100AD8D82 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		C108A7B21D9B108D00AD8D82 /* GenericDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericDataTableViewCell.h; sourceTree = "<group>"; };
+		C108A7B31D9B108D00AD8D82 /* GenericDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericDataTableViewCell.m; sourceTree = "<group>"; };
+		C108A7B41D9B108D00AD8D82 /* GenericDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenericDataTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,7 @@
 				C108A7931D9AFD2D00AD8D82 /* FlightsTableViewController.m */,
 				C108A7951D9AFD2D00AD8D82 /* TrainsTableViewController.h */,
 				C108A7961D9AFD2D00AD8D82 /* TrainsTableViewController.m */,
+				C108A7B11D9B106E00AD8D82 /* Custom Views */,
 				C108A7981D9AFD2D00AD8D82 /* Main.storyboard */,
 				C108A79B1D9AFD2D00AD8D82 /* Assets.xcassets */,
 				C108A79D1D9AFD2D00AD8D82 /* LaunchScreen.storyboard */,
@@ -113,6 +119,16 @@
 				C108A7AC1D9B094400AD8D82 /* GenericDataBO.m */,
 			);
 			path = "Business Objects";
+			sourceTree = "<group>";
+		};
+		C108A7B11D9B106E00AD8D82 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				C108A7B21D9B108D00AD8D82 /* GenericDataTableViewCell.h */,
+				C108A7B31D9B108D00AD8D82 /* GenericDataTableViewCell.m */,
+				C108A7B41D9B108D00AD8D82 /* GenericDataTableViewCell.xib */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +191,7 @@
 				C108A79F1D9AFD2D00AD8D82 /* LaunchScreen.storyboard in Resources */,
 				C108A79C1D9AFD2D00AD8D82 /* Assets.xcassets in Resources */,
 				C108A79A1D9AFD2D00AD8D82 /* Main.storyboard in Resources */,
+				C108A7B61D9B108D00AD8D82 /* GenericDataTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +209,7 @@
 				C108A7AD1D9B094400AD8D82 /* GenericDataBO.m in Sources */,
 				C108A7B01D9B0A4100AD8D82 /* Utils.m in Sources */,
 				C108A78E1D9AFD2D00AD8D82 /* main.m in Sources */,
+				C108A7B51D9B108D00AD8D82 /* GenericDataTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
