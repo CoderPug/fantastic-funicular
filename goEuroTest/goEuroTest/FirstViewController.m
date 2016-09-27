@@ -20,6 +20,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [[ConnectionManager sharedInstanceType] requestFlightsWithHandler:^(NSArray *response) {
+        
         NSLog(@"%@",response);
     }];
 }

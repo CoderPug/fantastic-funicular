@@ -89,7 +89,17 @@ static NSString *const CMFlightsURL = @"https://api.myjson.com/bins/w60i";
     
     [self performRequestWithURL:CMFlightsURL
                      completion:^(NSArray *response) {
-                         completion(response);
+                         
+                         NSMutableArray *temporalResult = [[NSMutableArray alloc] init];
+                         for (int i=0; i<response.count; i++) {
+                             NSDictionary *temporalResponseElement = response[i];
+                             if (temporalResponseElement != nil) {
+                                 GenericDataBO *temporalElement = [[GenericDataBO alloc] initWithData:temporalResponseElement];
+                                 [temporalResult addObject:temporalElement];
+                             }
+                         }
+                         
+                         completion(temporalResult);
                      }];
 }
 

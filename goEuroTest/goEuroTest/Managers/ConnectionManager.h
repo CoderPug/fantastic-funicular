@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GenericDataBO.h"
 
 @interface ConnectionManager : NSObject
 
