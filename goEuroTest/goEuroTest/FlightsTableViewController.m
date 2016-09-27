@@ -6,14 +6,14 @@
 //  Copyright © 2016 goeuro. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "FlightsTableViewController.h"
 #import "ConnectionManager.h"
 
-@interface FirstViewController ()
+@interface FlightsTableViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation FlightsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
