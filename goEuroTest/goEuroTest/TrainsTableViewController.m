@@ -6,13 +6,13 @@
 //  Copyright © 2016 goeuro. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "TrainsTableViewController.h"
 
-@interface SecondViewController ()
+@interface TrainsTableViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation TrainsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
