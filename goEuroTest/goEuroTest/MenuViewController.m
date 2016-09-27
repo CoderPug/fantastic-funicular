@@ -22,6 +22,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    [self.scrollView setContentSize:CGSizeMake(self.view.frame.size.width*2.0,
+                                               self.scrollView.frame.size.height)];
 }
 
 @end
