@@ -15,6 +15,7 @@
 		C108A79C1D9AFD2D00AD8D82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C108A79B1D9AFD2D00AD8D82 /* Assets.xcassets */; };
 		C108A79F1D9AFD2D00AD8D82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C108A79D1D9AFD2D00AD8D82 /* LaunchScreen.storyboard */; };
 		C108A7A91D9AFFA400AD8D82 /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7A81D9AFFA400AD8D82 /* ConnectionManager.m */; };
+		C108A7AD1D9B094400AD8D82 /* GenericDataBO.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7AC1D9B094400AD8D82 /* GenericDataBO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		C108A7A01D9AFD2D00AD8D82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C108A7A71D9AFFA400AD8D82 /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
 		C108A7A81D9AFFA400AD8D82 /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		C108A7AB1D9B094400AD8D82 /* GenericDataBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericDataBO.h; sourceTree = "<group>"; };
+		C108A7AC1D9B094400AD8D82 /* GenericDataBO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericDataBO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +69,7 @@
 			children = (
 				C108A78F1D9AFD2D00AD8D82 /* AppDelegate.h */,
 				C108A7901D9AFD2D00AD8D82 /* AppDelegate.m */,
+				C108A7AA1D9B093500AD8D82 /* Business Objects */,
 				C108A7A61D9AFF9300AD8D82 /* Managers */,
 				C108A7921D9AFD2D00AD8D82 /* FirstViewController.h */,
 				C108A7931D9AFD2D00AD8D82 /* FirstViewController.m */,
@@ -95,6 +99,15 @@
 				C108A7A81D9AFFA400AD8D82 /* ConnectionManager.m */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		C108A7AA1D9B093500AD8D82 /* Business Objects */ = {
+			isa = PBXGroup;
+			children = (
+				C108A7AB1D9B094400AD8D82 /* GenericDataBO.h */,
+				C108A7AC1D9B094400AD8D82 /* GenericDataBO.m */,
+			);
+			path = "Business Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +184,7 @@
 				C108A7911D9AFD2D00AD8D82 /* AppDelegate.m in Sources */,
 				C108A7A91D9AFFA400AD8D82 /* ConnectionManager.m in Sources */,
 				C108A7941D9AFD2D00AD8D82 /* FirstViewController.m in Sources */,
+				C108A7AD1D9B094400AD8D82 /* GenericDataBO.m in Sources */,
 				C108A78E1D9AFD2D00AD8D82 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
