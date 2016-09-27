@@ -8,7 +8,11 @@
 
 #import "ConnectionManager.h"
 
+static NSString *const CMFlightsURL = @"https://api.myjson.com/bins/w60i";
+
 @implementation ConnectionManager
+
+#pragma mark - Initialization
 
 + (instancetype)sharedInstanceType {
     
@@ -24,12 +28,56 @@
     
     self = [super init];
     if (self) {
+        [self initializeValues];
     }
     return self;
 }
 
+- (void)initializeValues {
+    
+    _sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    _session = [NSURLSession sessionWithConfiguration:self.sessionConfig
+                                             delegate:nil
+                                        delegateQueue:nil];
+}
+
+#pragma mark - Private
+
+- (void)performRequestWithURL:(NSString *)stringURL completion:(void (^)(NSArray *response))completionFunction {
+    
+    if ((self.sessionConfig == nil) || (self.session == nil)) {
+        NSLog(@"ERROR: Connection Manager values not initialized");
+        return;
+    }
+    if ((stringURL == nil) || [stringURL isEqualToString:@""]) {
+        NSLog(@"ERROR: StringURL is nil or empty");
+        return;
+    }
+    
+    NSURL *url = [NSURL URLWithString:stringURL];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    request.HTTPMethod = @"GET";
+    
+    NSURLSessionDataTask *task = [self.session dataTaskWithRequest:request
+                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    
+                                                     if (error == nil) {
+                                                         NSLog(@"%@",data);
+                                                     } else {
+                                                         NSLog(@"ERROR: URLSessionDataTask failed %@", [error localizedDescription]);
+                                                     }
+                                                 }];
+    [task resume];
+}
+
+#pragma mark - Public
+
 - (void)requestFlightsWithHandler:(void (^)(NSArray *response))completion {
     
+    [self performRequestWithURL:CMFlightsURL
+                     completion:^(NSArray *response) {
+                         
+                     }];
 }
 
 @end

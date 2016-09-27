@@ -7,6 +7,8 @@
 //
 
 #import "FirstViewController.h"
+#import "ConnectionManager.h"
+
 
 @interface FirstViewController ()
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [[ConnectionManager sharedInstanceType] requestFlightsWithHandler:^(NSArray *response) {
+        //
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
