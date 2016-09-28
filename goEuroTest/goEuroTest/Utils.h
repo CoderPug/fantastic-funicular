@@ -12,5 +12,7 @@
 
 + (NSString *)getStringValueFromObject:(NSDictionary *)dictionary forKey:(NSString *)key;
 + (NSNumber *)getNumberValueFromObject:(NSDictionary *)dictionary forKey:(NSString *)key;
++ (NSDate *)getDateFromFormattedString:(NSString *)string;
++ (NSString *)getFormattedStringFromDate:(NSDate *)date;
 
 @end

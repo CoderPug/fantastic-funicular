@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  SecondViewController.h
 //  goEuroTest
 //
 //  Created by Santex on 9/27/16.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface TrainsTableViewController : UITableViewController
 
 
 @end

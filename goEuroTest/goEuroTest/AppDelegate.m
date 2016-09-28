@@ -17,6 +17,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIColor *colorMain = [UIColor colorWithRed:68.0/255.0
+                                         green:154.0/255.0
+                                          blue:254.0/255.0
+                                         alpha:1.0];
+    
+    [[UINavigationBar appearance] setBarTintColor:colorMain];
+    [[UINavigationBar appearance] setTitleTextAttributes: @{ NSForegroundColorAttributeName :
+                                                                [UIColor whiteColor]}];
+    [[UINavigationBar appearance] setTranslucent:false];
+    
+    [[UITabBar appearance] setBarTintColor:colorMain];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UITabBar appearance] setTranslucent:false];
+    
     return YES;
 }
 

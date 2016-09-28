@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  MenuViewController.h
 //  goEuroTest
 //
 //  Created by Santex on 9/27/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface MenuViewController : UIViewController
 
 @end
-
