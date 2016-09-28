@@ -109,12 +109,21 @@
     [newRequest setPredicate:predicate];
     
     NSError *error = nil;
-    NSArray *result = [context executeFetchRequest:newRequest error:&error];
+    NSArray *arrayCoreDataEntities = [context executeFetchRequest:newRequest error:&error];
     if (error != nil) {
         return nil;
     }
     
-    return result;
+    NSMutableArray *arrayBusinessObjects = [[NSMutableArray alloc] init];
+    for (int i=0; i<arrayCoreDataEntities.count; i++) {
+        GenericData *temporalObject = arrayCoreDataEntities[i];
+        if (temporalObject != nil) {
+            GenericDataBO *temporalElement = [[GenericDataBO alloc] initWithObject:temporalObject];
+            [arrayBusinessObjects addObject:temporalElement];
+        }
+    }
+    
+    return arrayBusinessObjects;
 }
 
 @end

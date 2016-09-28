@@ -96,16 +96,7 @@ static NSString *const CMTrainsURL = @"https://api.myjson.com/bins/3zmcy";
                                                          withType:GenericDataType_Flight];
                          
                          NSArray *result = [[StoreManager sharedInstance] retrieveGenericDataOfType:GenericDataType_Flight];
-                         NSMutableArray *temporalResult = [[NSMutableArray alloc] init];
-                         for (int i=0; i<result.count; i++) {
-                             GenericData *temporalObject = result[i];
-                             if (temporalObject != nil) {
-                                 GenericDataBO *temporalElement = [[GenericDataBO alloc] initWithObject:temporalObject];
-                                 [temporalResult addObject:temporalElement];
-                             }
-                         }
-                         
-                         completion(temporalResult);
+                         completion(result);
                      }];
 }
 

@@ -8,6 +8,7 @@
 
 #import "FlightsTableViewController.h"
 #import "ConnectionManager.h"
+#import "StoreManager.h"
 #import "GenericDataTableViewCell.h"
 
 @interface FlightsTableViewController ()
@@ -22,6 +23,7 @@
     
     [super viewDidLoad];
     [self customize];
+    [self loadFlights];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,6 +41,14 @@
 }
 
 #pragma mark - Request
+
+- (void)loadFlights {
+    
+    if (self.flights == nil) {
+        self.flights = [[NSMutableArray alloc] init];
+    }
+    self.flights = [NSMutableArray arrayWithArray:[[StoreManager sharedInstance] retrieveGenericDataOfType:GenericDataType_Flight]];
+}
 
 - (void)requestFlights {
     
