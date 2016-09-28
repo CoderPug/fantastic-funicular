@@ -53,6 +53,9 @@
                                     <constraint firstAttribute="height" constant="25" id="e7S-J5-D2j"/>
                                 </constraints>
                                 <state key="normal" image="sort"/>
+                                <connections>
+                                    <action selector="buttonFilterTouchUpInside:" destination="3Zu-hY-Yav" eventType="touchUpInside" id="zxg-xp-Br1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56x-2D-isg">
                                 <rect key="frame" x="550" y="37" width="25" height="25"/>

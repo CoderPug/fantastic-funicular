@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController <UIScrollViewDelegate>
+@interface MenuViewController : UIViewController <UIScrollViewDelegate, UIPopoverPresentationControllerDelegate>
 
 @end

@@ -67,6 +67,31 @@
                                                self.scrollView.frame.size.height)];
 }
 
+#pragma mark - IBActions
+
+- (IBAction)buttonFilterTouchUpInside:(id)sender {
+    
+    UIButton *button = (UIButton *)sender;
+    UIViewController *temporalController = [self.storyboard instantiateViewControllerWithIdentifier:@""];
+    if (temporalController != nil) {
+        temporalController.modalPresentationStyle = UIModalPresentationPopover;
+        UIPopoverPresentationController *temporalPresentationController = temporalController.popoverPresentationController;
+        if (temporalPresentationController != nil) {
+            temporalPresentationController.delegate = self;
+            temporalPresentationController.sourceView = button;
+            temporalPresentationController.sourceRect = button.bounds;
+            [self presentViewController:temporalController animated:true completion:nil];
+        }
+    }
+}
+
+#pragma mark - UIPopoverPresentationControllerDelegate
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+ 
+    return UIModalPresentationNone;
+}
+
 #pragma mark - UIScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
