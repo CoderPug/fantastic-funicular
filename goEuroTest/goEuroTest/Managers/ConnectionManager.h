@@ -17,5 +17,6 @@
 + (instancetype)sharedInstanceType;
 
 - (void)requestFlightsWithHandler:(void (^)(NSArray *response))completion;
+- (void)requestTrainsWithHandler:(void (^)(NSArray *response))completion;
 
 @end

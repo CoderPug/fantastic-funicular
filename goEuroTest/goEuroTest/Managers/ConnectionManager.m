@@ -9,6 +9,7 @@
 #import "ConnectionManager.h"
 
 static NSString *const CMFlightsURL = @"https://api.myjson.com/bins/w60i";
+static NSString *const CMTrainsURL = @"https://api.myjson.com/bins/3zmcy";
 
 @implementation ConnectionManager
 
@@ -88,6 +89,24 @@ static NSString *const CMFlightsURL = @"https://api.myjson.com/bins/w60i";
 - (void)requestFlightsWithHandler:(void (^)(NSArray *response))completion {
     
     [self performRequestWithURL:CMFlightsURL
+                     completion:^(NSArray *response) {
+                         
+                         NSMutableArray *temporalResult = [[NSMutableArray alloc] init];
+                         for (int i=0; i<response.count; i++) {
+                             NSDictionary *temporalResponseElement = response[i];
+                             if (temporalResponseElement != nil) {
+                                 GenericDataBO *temporalElement = [[GenericDataBO alloc] initWithData:temporalResponseElement];
+                                 [temporalResult addObject:temporalElement];
+                             }
+                         }
+                         
+                         completion(temporalResult);
+                     }];
+}
+
+- (void)requestTrainsWithHandler:(void (^)(NSArray *response))completion {
+    
+    [self performRequestWithURL:CMTrainsURL
                      completion:^(NSArray *response) {
                          
                          NSMutableArray *temporalResult = [[NSMutableArray alloc] init];
