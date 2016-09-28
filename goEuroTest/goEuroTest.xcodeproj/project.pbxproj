@@ -20,6 +20,7 @@
 		C108A7B51D9B108D00AD8D82 /* GenericDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7B31D9B108D00AD8D82 /* GenericDataTableViewCell.m */; };
 		C108A7B61D9B108D00AD8D82 /* GenericDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C108A7B41D9B108D00AD8D82 /* GenericDataTableViewCell.xib */; };
 		C108A7B91D9B24A700AD8D82 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7B81D9B24A700AD8D82 /* MenuViewController.m */; };
+		C108A7BC1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C108A7BA1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C108A7B41D9B108D00AD8D82 /* GenericDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenericDataTableViewCell.xib; sourceTree = "<group>"; };
 		C108A7B71D9B24A700AD8D82 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C108A7B81D9B24A700AD8D82 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		C108A7BB1D9B4F9600AD8D82 /* goEuroTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = goEuroTest.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				C108A79B1D9AFD2D00AD8D82 /* Assets.xcassets */,
 				C108A79D1D9AFD2D00AD8D82 /* LaunchScreen.storyboard */,
 				C108A7A01D9AFD2D00AD8D82 /* Info.plist */,
+				C108A7BA1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld */,
 				C108A78C1D9AFD2D00AD8D82 /* Supporting Files */,
 			);
 			path = goEuroTest;
@@ -215,6 +218,7 @@
 				C108A7AD1D9B094400AD8D82 /* GenericDataBO.m in Sources */,
 				C108A7B01D9B0A4100AD8D82 /* Utils.m in Sources */,
 				C108A78E1D9AFD2D00AD8D82 /* main.m in Sources */,
+				C108A7BC1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld in Sources */,
 				C108A7B51D9B108D00AD8D82 /* GenericDataTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +373,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C108A7BA1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C108A7BB1D9B4F9600AD8D82 /* goEuroTest.xcdatamodel */,
+			);
+			currentVersion = C108A7BB1D9B4F9600AD8D82 /* goEuroTest.xcdatamodel */;
+			path = goEuroTest.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C108A7811D9AFD2D00AD8D82 /* Project object */;
 }
