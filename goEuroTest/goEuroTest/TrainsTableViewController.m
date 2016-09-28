@@ -8,6 +8,7 @@
 
 #import "TrainsTableViewController.h"
 #import "ConnectionManager.h"
+#import "StoreManager.h"
 #import "GenericDataTableViewCell.h"
 
 @interface TrainsTableViewController ()
@@ -22,6 +23,7 @@
     
     [super viewDidLoad];
     [self customize];
+    [self loadTrains];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -39,6 +41,14 @@
 }
 
 #pragma mark - Request
+
+- (void)loadTrains {
+    
+    if (self.trains == nil) {
+        self.trains = [[NSMutableArray alloc] init];
+    }
+    self.trains = [NSMutableArray arrayWithArray:[[StoreManager sharedInstance] retrieveGenericDataOfType:GenericDataType_Train]];
+}
 
 - (void)requestTrains {
     
