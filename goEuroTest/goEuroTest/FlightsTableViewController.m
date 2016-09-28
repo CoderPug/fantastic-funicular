@@ -55,6 +55,28 @@
     GenericDataBO *temporalObject = self.flights[indexPath.row];
     [cell loadInformation:temporalObject];
     
+    cell.logoImage.image = nil;
+    
+    NSString *stringImageURL = [temporalObject.providerLogoURL stringByReplacingOccurrencesOfString:@"{size}" withString:@"63"];
+    
+    if (stringImageURL != nil) {
+        
+        NSURL *url = [NSURL URLWithString:stringImageURL];
+        NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+            if (data) {
+                UIImage *temporalImage = [UIImage imageWithData:data];
+                if (temporalImage != nil) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        GenericDataTableViewCell *temporalCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                        if (temporalCell != nil) {
+                            [temporalCell.logoImage setImage:temporalImage];
+                        }
+                    });
+                }
+            }
+        }];
+        [task resume];
+    }
     return cell;
 }
 
