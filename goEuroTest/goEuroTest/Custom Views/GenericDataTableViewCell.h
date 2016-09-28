@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GenericDataBO.h"
 
 @interface GenericDataTableViewCell : UITableViewCell
 
@@ -14,5 +15,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *labelPrice;
 @property (nonatomic, weak) IBOutlet UILabel *labelTime;
 @property (nonatomic, weak) IBOutlet UILabel *labelNumberOfStops;
+
+- (void)loadInformation:(GenericDataBO *)object;
 
 @end

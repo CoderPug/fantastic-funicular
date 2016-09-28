@@ -19,4 +19,11 @@
     [super setSelected:selected animated:animated];
 }
 
+- (void)loadInformation:(GenericDataBO *)object {
+    
+    self.labelTime.text = object.processedSchedule;
+    self.labelPrice.text = object.processedPrice;
+    self.labelNumberOfStops.text = object.processedDuration;
+}
+
 @end

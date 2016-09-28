@@ -18,6 +18,10 @@
 @property (nonatomic, strong) NSString *departureTime;
 @property (nonatomic, strong) NSString *providerLogoURL;
 
+@property (nonatomic, strong, readonly) NSString *processedDuration;
+@property (nonatomic, strong, readonly) NSString *processedPrice;
+@property (nonatomic, strong, readonly) NSString *processedSchedule;
+
 - (instancetype)initWithData:(NSDictionary *)data;
 
 @end

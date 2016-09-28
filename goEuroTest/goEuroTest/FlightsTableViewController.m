@@ -53,9 +53,7 @@
     
     GenericDataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GenericDataTableViewCell"];
     GenericDataBO *temporalObject = self.flights[indexPath.row];
-    
-    cell.labelTime.text = [NSString stringWithFormat:@"%@ - %@", temporalObject.departureTime, temporalObject.arrivalTime];
-    cell.labelPrice.text = [NSString stringWithFormat:@"€ %@", temporalObject.priceInEuros];
+    [cell loadInformation:temporalObject];
     
     return cell;
 }
