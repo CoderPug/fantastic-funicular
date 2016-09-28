@@ -13,4 +13,8 @@
 
 + (instancetype)sharedInstance;
 
+- (void)saveObject:(GenericDataBO *)object withType:(GenericDataType)type;
+- (void)saveArray:(NSArray *)elements withType:(GenericDataType)type;
+- (NSArray *)retrieveGenericDataOfType:(GenericDataType)type;
+
 @end

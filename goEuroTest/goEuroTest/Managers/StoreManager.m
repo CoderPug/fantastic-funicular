@@ -46,6 +46,74 @@
 
 #pragma mark - Public
 
+- (void)saveObject:(GenericDataBO *)object withType:(GenericDataType)type {
+    
+    if (object == nil || object.identifier == nil) {
+        return;
+    }
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSError *error = nil;
+    
+    NSFetchRequest *newRequest = [NSFetchRequest fetchRequestWithEntityName:@"GenericData"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"identifier == %@ AND type == %d", [object.identifier stringValue], type];
+    [newRequest setPredicate:predicate];
+    NSUInteger count = [context countForFetchRequest:newRequest error:&error];
+    if (!error) {
+        if (count > 0) {
+            NSLog(@"ERROR: Object already exists!");
+            return;
+        }
+    } else {
+        NSLog(@"ERROR: Could not save - %@ %@", error, [error localizedDescription]);
+        return;
+    }
+    
+    NSManagedObject *newObject = [NSEntityDescription insertNewObjectForEntityForName:@"GenericData" inManagedObjectContext:context];
+    [newObject setValue:object.identifier forKey:@"identifier"];
+    [newObject setValue:object.departureTime forKey:@"departureTime"];
+    [newObject setValue:object.arrivalTime forKey:@"arrivalTime"];
+    [newObject setValue:object.providerLogoURL forKey:@"providerLogoURL"];
+    [newObject setValue:object.priceInEuros forKey:@"priceInEuros"];
+    [newObject setValue:object.numberOfStops forKey:@"numberOfStops"];
+    [newObject setValue:[NSNumber numberWithInteger:type] forKey:@"type"];
+    
+    error = nil;
+    [context save:&error];
+    
+    if (error != nil) {
+        NSLog(@"ERROR: Could not save - %@ %@", error, [error localizedDescription]);
+    }
+}
 
+- (void)saveArray:(NSArray *)elements withType:(GenericDataType)type {
+    
+    if (elements == nil) {
+        return;
+    }
+    
+    for (int i=0; i<elements.count; i++) {
+        GenericDataBO *temporalObject = elements[i];
+        [self saveObject:temporalObject withType:type];
+    }
+}
+
+- (NSArray *)retrieveGenericDataOfType:(GenericDataType)type {
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *newRequest = [NSFetchRequest fetchRequestWithEntityName:@"GenericData"];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"identifier" ascending:YES];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type == %d", type];
+    [newRequest setSortDescriptors:@[sortDescriptor]];
+    [newRequest setPredicate:predicate];
+    
+    NSError *error = nil;
+    NSArray *result = [context executeFetchRequest:newRequest error:&error];
+    if (error != nil) {
+        return nil;
+    }
+    
+    return result;
+}
 
 @end
