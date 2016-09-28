@@ -11,6 +11,7 @@
 @interface MenuViewController ()
 
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
+@property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, weak) IBOutlet UILabel *labelTitle;
 
 @end
@@ -42,6 +43,7 @@
     
     CGFloat pageWidth = scrollView.frame.size.width;
     NSInteger currentPage = lround(scrollView.contentOffset.x / pageWidth);
+    self.pageControl.currentPage = currentPage;
     
     switch (currentPage) {
         case 0:
