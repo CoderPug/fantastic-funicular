@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GenericData.h"
 
 typedef NS_ENUM(NSInteger, GenericDataType) {
     GenericDataType_Flight,
@@ -28,5 +29,6 @@ typedef NS_ENUM(NSInteger, GenericDataType) {
 @property (nonatomic, strong, readonly) NSString *processedSchedule;
 
 - (instancetype)initWithData:(NSDictionary *)data;
+- (instancetype)initWithObject:(GenericData *)object;
 
 @end

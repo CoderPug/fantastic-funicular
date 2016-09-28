@@ -21,9 +21,9 @@
 		C108A7B61D9B108D00AD8D82 /* GenericDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C108A7B41D9B108D00AD8D82 /* GenericDataTableViewCell.xib */; };
 		C108A7B91D9B24A700AD8D82 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7B81D9B24A700AD8D82 /* MenuViewController.m */; };
 		C108A7BC1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C108A7BA1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld */; };
-		C108A7C11D9B50C000AD8D82 /* GenericData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7BE1D9B50C000AD8D82 /* GenericData+CoreDataProperties.m */; };
 		C108A7C21D9B50C000AD8D82 /* GenericData.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7C01D9B50C000AD8D82 /* GenericData.m */; };
 		C108A7C61D9B511400AD8D82 /* StoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7C51D9B511400AD8D82 /* StoreManager.m */; };
+		C108A7CC1D9B562700AD8D82 /* GenericData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = C108A7CB1D9B562700AD8D82 /* GenericData+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,12 +51,12 @@
 		C108A7B71D9B24A700AD8D82 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		C108A7B81D9B24A700AD8D82 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		C108A7BB1D9B4F9600AD8D82 /* goEuroTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = goEuroTest.xcdatamodel; sourceTree = "<group>"; };
-		C108A7BD1D9B50C000AD8D82 /* GenericData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GenericData+CoreDataProperties.h"; sourceTree = "<group>"; };
-		C108A7BE1D9B50C000AD8D82 /* GenericData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GenericData+CoreDataProperties.m"; sourceTree = "<group>"; };
 		C108A7BF1D9B50C000AD8D82 /* GenericData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericData.h; sourceTree = "<group>"; };
 		C108A7C01D9B50C000AD8D82 /* GenericData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericData.m; sourceTree = "<group>"; };
 		C108A7C41D9B511400AD8D82 /* StoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoreManager.h; sourceTree = "<group>"; };
 		C108A7C51D9B511400AD8D82 /* StoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoreManager.m; sourceTree = "<group>"; };
+		C108A7CA1D9B562700AD8D82 /* GenericData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GenericData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		C108A7CB1D9B562700AD8D82 /* GenericData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GenericData+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,8 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				C108A7BA1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld */,
-				C108A7BD1D9B50C000AD8D82 /* GenericData+CoreDataProperties.h */,
-				C108A7BE1D9B50C000AD8D82 /* GenericData+CoreDataProperties.m */,
+				C108A7CA1D9B562700AD8D82 /* GenericData+CoreDataProperties.h */,
+				C108A7CB1D9B562700AD8D82 /* GenericData+CoreDataProperties.m */,
 				C108A7BF1D9B50C000AD8D82 /* GenericData.h */,
 				C108A7C01D9B50C000AD8D82 /* GenericData.m */,
 			);
@@ -239,11 +239,11 @@
 				C108A7911D9AFD2D00AD8D82 /* AppDelegate.m in Sources */,
 				C108A7A91D9AFFA400AD8D82 /* ConnectionManager.m in Sources */,
 				C108A7941D9AFD2D00AD8D82 /* FlightsTableViewController.m in Sources */,
-				C108A7C11D9B50C000AD8D82 /* GenericData+CoreDataProperties.m in Sources */,
 				C108A7AD1D9B094400AD8D82 /* GenericDataBO.m in Sources */,
 				C108A7B01D9B0A4100AD8D82 /* Utils.m in Sources */,
 				C108A78E1D9AFD2D00AD8D82 /* main.m in Sources */,
 				C108A7BC1D9B4F9600AD8D82 /* goEuroTest.xcdatamodeld in Sources */,
+				C108A7CC1D9B562700AD8D82 /* GenericData+CoreDataProperties.m in Sources */,
 				C108A7B51D9B108D00AD8D82 /* GenericDataTableViewCell.m in Sources */,
 				C108A7C21D9B50C000AD8D82 /* GenericData.m in Sources */,
 			);

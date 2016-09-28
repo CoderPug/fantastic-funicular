@@ -93,7 +93,8 @@
     }
     
     for (int i=0; i<elements.count; i++) {
-        GenericDataBO *temporalObject = elements[i];
+        NSDictionary *temporalDictionary = elements[i];
+        GenericDataBO *temporalObject = [[GenericDataBO alloc] initWithData:temporalDictionary];
         [self saveObject:temporalObject withType:type];
     }
 }

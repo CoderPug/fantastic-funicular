@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *type;
 @property (nullable, nonatomic, retain) NSString *providerLogoURL;
 @property (nullable, nonatomic, retain) NSString *priceInEuros;
-@property (nullable, nonatomic, retain) NSString *numberOfStops;
+@property (nullable, nonatomic, retain) NSNumber *numberOfStops;
 @property (nullable, nonatomic, retain) NSNumber *identifier;
 @property (nullable, nonatomic, retain) NSString *departureTime;
 @property (nullable, nonatomic, retain) NSString *arrivalTime;
