@@ -23,38 +23,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zq-w8-mKm">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zq-w8-mKm">
                                 <rect key="frame" x="0.0" y="130" width="600" height="470"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gKO-6W-AL9">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="470"/>
-                                        <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3go-RW-ktQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="470"/>
-                                                <connections>
-                                                    <segue destination="gtr-Mw-pia" kind="embed" id="GiZ-cx-07i"/>
-                                                </connections>
-                                            </containerView>
-                                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ue-6B-Ido">
-                                                <rect key="frame" x="600" y="0.0" width="600" height="470"/>
-                                                <connections>
-                                                    <segue destination="MhD-zf-Fl3" kind="embed" id="1kJ-Aw-SgD"/>
-                                                </connections>
-                                            </containerView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="3go-RW-ktQ" firstAttribute="leading" secondItem="gKO-6W-AL9" secondAttribute="leading" id="74Y-5r-Nyq"/>
-                                            <constraint firstItem="9ue-6B-Ido" firstAttribute="top" secondItem="gKO-6W-AL9" secondAttribute="top" id="9ty-bi-FI9"/>
-                                            <constraint firstAttribute="bottom" secondItem="3go-RW-ktQ" secondAttribute="bottom" id="Afm-Ct-HUH"/>
-                                            <constraint firstAttribute="bottom" secondItem="9ue-6B-Ido" secondAttribute="bottom" id="Jzf-Nu-0Zt"/>
-                                            <constraint firstItem="3go-RW-ktQ" firstAttribute="top" secondItem="gKO-6W-AL9" secondAttribute="top" id="az5-3p-h8F"/>
-                                            <constraint firstItem="9ue-6B-Ido" firstAttribute="width" secondItem="gKO-6W-AL9" secondAttribute="width" id="c34-fo-Qds"/>
-                                            <constraint firstItem="3go-RW-ktQ" firstAttribute="width" secondItem="gKO-6W-AL9" secondAttribute="width" id="i0C-Fr-fXe"/>
-                                            <constraint firstItem="9ue-6B-Ido" firstAttribute="leading" secondItem="3go-RW-ktQ" secondAttribute="trailing" id="xh2-fH-zDD"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                             </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berlin - Munich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxj-mG-2Rz">
@@ -96,7 +66,6 @@
                         <color key="backgroundColor" red="0.066666666669999999" green="0.49803921569999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="IiM-hO-G2V" firstAttribute="top" secondItem="xxj-mG-2Rz" secondAttribute="bottom" id="KQV-9j-fZX"/>
-                            <constraint firstItem="gKO-6W-AL9" firstAttribute="width" secondItem="H0T-ZT-4fn" secondAttribute="width" id="Ksx-18-kbu"/>
                             <constraint firstAttribute="trailing" secondItem="6Zq-w8-mKm" secondAttribute="trailing" id="MvM-uT-eTN"/>
                             <constraint firstItem="6Zq-w8-mKm" firstAttribute="top" secondItem="H0T-ZT-4fn" secondAttribute="top" constant="130" id="N4H-uw-hJW"/>
                             <constraint firstItem="xJ7-2o-NHX" firstAttribute="centerX" secondItem="H0T-ZT-4fn" secondAttribute="centerX" id="PWh-SL-CPV"/>
@@ -110,7 +79,6 @@
                             <constraint firstItem="xxj-mG-2Rz" firstAttribute="centerX" secondItem="H0T-ZT-4fn" secondAttribute="centerX" id="k9z-zE-K6r"/>
                             <constraint firstAttribute="trailing" secondItem="56x-2D-isg" secondAttribute="trailing" constant="25" id="mDx-Ph-bfG"/>
                             <constraint firstItem="gU8-Zh-eBa" firstAttribute="centerX" secondItem="H0T-ZT-4fn" secondAttribute="centerX" id="mI9-pG-FJi"/>
-                            <constraint firstItem="gKO-6W-AL9" firstAttribute="height" secondItem="H0T-ZT-4fn" secondAttribute="height" constant="-130" id="rjO-xi-Vhd"/>
                             <constraint firstItem="IiM-hO-G2V" firstAttribute="centerX" secondItem="H0T-ZT-4fn" secondAttribute="centerX" id="tKk-pY-50l"/>
                             <constraint firstItem="fbt-Fd-hYd" firstAttribute="top" secondItem="H0T-ZT-4fn" secondAttribute="top" constant="37" id="xke-lq-6AU"/>
                         </constraints>
@@ -128,9 +96,9 @@
         <!--Item-->
         <scene sceneID="7wm-hm-qq4">
             <objects>
-                <tableViewController id="gtr-Mw-pia" customClass="FlightsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="flightsTableViewController" id="gtr-Mw-pia" customClass="FlightsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ilq-aW-zhl">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="470"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.49803921569999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
@@ -150,9 +118,9 @@
         <!--Item-->
         <scene sceneID="6LL-zH-hQ0">
             <objects>
-                <tableViewController id="MhD-zf-Fl3" customClass="TrainsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="trainsTableViewController" id="MhD-zf-Fl3" customClass="TrainsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="KJ0-cF-F1H">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="470"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.49803921569999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <connections>
@@ -165,7 +133,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mka-bX-VT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="209"/>
+            <point key="canvasLocation" x="816" y="313"/>
         </scene>
     </scenes>
     <resources>

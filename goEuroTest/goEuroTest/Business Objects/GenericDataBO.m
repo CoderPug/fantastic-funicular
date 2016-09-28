@@ -51,7 +51,9 @@
 - (void)processInformation {
     
     if (_priceInEuros != nil) {
-        _processedPrice = [NSString stringWithFormat:@"€ %@", _priceInEuros];
+        double temporalPrice = [_priceInEuros floatValue];
+        temporalPrice = round(100 * temporalPrice) / 100;
+        _processedPrice = [NSString stringWithFormat:@"€ %.2f", temporalPrice];
     } else {
         _processedPrice = @"Price not available";
     }
