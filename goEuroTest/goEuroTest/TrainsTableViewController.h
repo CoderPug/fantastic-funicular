@@ -10,6 +10,7 @@
 
 @interface TrainsTableViewController : UITableViewController
 
+- (void)reloadData;
 
 @end
 

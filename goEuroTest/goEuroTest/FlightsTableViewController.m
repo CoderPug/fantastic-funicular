@@ -40,7 +40,15 @@
          forCellReuseIdentifier:@"GenericDataTableViewCell"];
 }
 
-#pragma mark - Request
+#pragma mark - Public
+
+- (void)reloadData {
+    
+    [self loadFlights];
+    [self.tableView reloadData];
+}
+
+#pragma mark - Load
 
 - (void)loadFlights {
     
@@ -49,6 +57,8 @@
     }
     self.flights = [NSMutableArray arrayWithArray:[[StoreManager sharedInstance] retrieveGenericDataOfType:GenericDataType_Flight]];
 }
+
+#pragma mark - Request
 
 - (void)requestFlights {
     

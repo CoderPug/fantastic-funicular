@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "goEuroTest-Swift.h"
 
-@interface MenuViewController : UIViewController <UIScrollViewDelegate, UIPopoverPresentationControllerDelegate>
+@interface MenuViewController : UIViewController <UIScrollViewDelegate, UIPopoverPresentationControllerDelegate, SortingOptionsTableViewControllerDelegate>
 
 @end

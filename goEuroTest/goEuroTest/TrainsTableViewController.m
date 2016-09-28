@@ -40,7 +40,15 @@
          forCellReuseIdentifier:@"GenericDataTableViewCell"];
 }
 
-#pragma mark - Request
+#pragma mark - Public
+
+- (void)reloadData {
+    
+    [self loadTrains];
+    [self.tableView reloadData];
+}
+
+#pragma mark - Load
 
 - (void)loadTrains {
     
@@ -49,6 +57,8 @@
     }
     self.trains = [NSMutableArray arrayWithArray:[[StoreManager sharedInstance] retrieveGenericDataOfType:GenericDataType_Train]];
 }
+
+#pragma mark - Request
 
 - (void)requestTrains {
     

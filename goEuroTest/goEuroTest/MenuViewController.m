@@ -7,6 +7,9 @@
 //
 
 #import "MenuViewController.h"
+#import "StoreManager.h"
+#import "FlightsTableViewController.h"
+#import "TrainsTableViewController.h"
 
 @interface MenuViewController ()
 
@@ -14,8 +17,9 @@
 @property (nonatomic, weak) IBOutlet UIPageControl *pageControl;
 @property (nonatomic, weak) IBOutlet UILabel *labelTitle;
 
-@property (nonatomic, strong) UIViewController *flightsTableViewController;
-@property (nonatomic, strong) UIViewController *trainsTableViewController;
+@property (nonatomic, strong) SortingOptionsTableViewController *popOverController;
+@property (nonatomic, strong) FlightsTableViewController *flightsTableViewController;
+@property (nonatomic, strong) TrainsTableViewController *trainsTableViewController;
 
 @end
 
@@ -72,16 +76,19 @@
 - (IBAction)buttonFilterTouchUpInside:(id)sender {
     
     UIButton *button = (UIButton *)sender;
-    UIViewController *temporalController = [self.storyboard instantiateViewControllerWithIdentifier:@""];
-    if (temporalController != nil) {
-        temporalController.modalPresentationStyle = UIModalPresentationPopover;
-        UIPopoverPresentationController *temporalPresentationController = temporalController.popoverPresentationController;
-        if (temporalPresentationController != nil) {
-            temporalPresentationController.delegate = self;
-            temporalPresentationController.sourceView = button;
-            temporalPresentationController.sourceRect = button.bounds;
-            [self presentViewController:temporalController animated:true completion:nil];
-        }
+    if (self.popOverController == nil) {
+        self.popOverController = [self.storyboard instantiateViewControllerWithIdentifier:@"sortingOptionsTableViewController"];
+    }
+    
+    self.popOverController.modalPresentationStyle = UIModalPresentationPopover;
+    self.popOverController.preferredContentSize = CGSizeMake(180, 70+50*3+20);
+    self.popOverController.customDelegate = self;
+    UIPopoverPresentationController *temporalPresentationController = self.popOverController.popoverPresentationController;
+    if (temporalPresentationController != nil) {
+        temporalPresentationController.delegate = self;
+        temporalPresentationController.sourceView = button;
+        temporalPresentationController.sourceRect = button.bounds;
+        [self presentViewController:self.popOverController animated:true completion:nil];
     }
 }
 
@@ -109,6 +116,25 @@
             break;
         default:
             break;
+    }
+}
+
+#pragma mark - SortingOptionsTableViewControllerDelegate
+
+- (void)sortingOptionsTableViewControllerDidSelectOption:(SortingOptionsTableViewController *)controller selection:(SortingCriteriaType)selection {
+ 
+    if (self.popOverController != nil) {
+        [self.popOverController dismissViewControllerAnimated:true completion:^{
+            
+            [[StoreManager sharedInstance] setType:selection];
+            
+            if (self.flightsTableViewController != nil) {
+                [self.flightsTableViewController reloadData];
+            }
+            if (self.trainsTableViewController != nil) {
+                [self.trainsTableViewController reloadData];
+            }
+        }];
     }
 }
 
