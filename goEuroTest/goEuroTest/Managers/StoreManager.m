@@ -27,6 +27,7 @@
 - (id)init {
     
     if (self = [super init]) {
+        _type = SortingCriteriaType_Departure;
     }
     return self;
 }
@@ -42,6 +43,26 @@
         context = [delegate managedObjectContext];
     }
     return context;
+}
+
+- (NSSortDescriptor *)getProperSortDescriptor {
+    
+    NSString *sortingParamterKey = @"";
+    switch (self.type) {
+        case SortingCriteriaType_Arrival:
+            sortingParamterKey = @"arrivalTime";
+            break;
+        case SortingCriteriaType_Departure:
+            sortingParamterKey = @"departureTime";
+            break;
+        case SortingCriteriaType_Duration:
+        default:
+            sortingParamterKey = @"identifier";
+            break;
+    }
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:sortingParamterKey ascending:YES];
+    return sortDescriptor;
 }
 
 #pragma mark - Public
@@ -103,7 +124,7 @@
     
     NSManagedObjectContext *context = [self managedObjectContext];
     NSFetchRequest *newRequest = [NSFetchRequest fetchRequestWithEntityName:@"GenericData"];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"identifier" ascending:YES];
+    NSSortDescriptor *sortDescriptor = [self getProperSortDescriptor];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"type == %d", type];
     [newRequest setSortDescriptors:@[sortDescriptor]];
     [newRequest setPredicate:predicate];

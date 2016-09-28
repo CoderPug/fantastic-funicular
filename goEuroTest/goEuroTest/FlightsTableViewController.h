@@ -10,6 +10,7 @@
 
 @interface FlightsTableViewController : UITableViewController
 
+- (void)reloadData;
 
 @end
 

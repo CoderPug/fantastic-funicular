@@ -9,7 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "GenericDataBO.h"
 
+typedef NS_ENUM(NSInteger, SortingCriteriaType) {
+    SortingCriteriaType_Departure,
+    SortingCriteriaType_Arrival,
+    SortingCriteriaType_Duration
+};
+
 @interface StoreManager : NSObject
+
+@property (nonatomic, assign) SortingCriteriaType type;
 
 + (instancetype)sharedInstance;
 

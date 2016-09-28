@@ -53,6 +53,9 @@
                                     <constraint firstAttribute="height" constant="25" id="e7S-J5-D2j"/>
                                 </constraints>
                                 <state key="normal" image="sort"/>
+                                <connections>
+                                    <action selector="buttonFilterTouchUpInside:" destination="3Zu-hY-Yav" eventType="touchUpInside" id="zxg-xp-Br1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56x-2D-isg">
                                 <rect key="frame" x="550" y="37" width="25" height="25"/>
@@ -114,6 +117,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JkG-5A-Hy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="816" y="-387"/>
+        </scene>
+        <!--Sorting Options Table View Controller-->
+        <scene sceneID="2br-vJ-kan">
+            <objects>
+                <tableViewController storyboardIdentifier="sortingOptionsTableViewController" id="nlq-a6-Ven" customClass="SortingOptionsTableViewController" customModule="goEuroTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="X4j-lD-Hcp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="AJv-N0-Ou1">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the sorting criteria you want to use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srJ-NP-E85">
+                                    <rect key="frame" x="10" y="10" width="150" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="3xg-iC-qof"/>
+                                        <constraint firstAttribute="height" constant="50" id="OCg-qg-7AZ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="14"/>
+                                    <color key="textColor" red="0.066666666669999999" green="0.49803921569999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="srJ-NP-E85" firstAttribute="top" secondItem="AJv-N0-Ou1" secondAttribute="top" constant="10" id="7b6-V8-SBH"/>
+                                <constraint firstItem="srJ-NP-E85" firstAttribute="leading" secondItem="AJv-N0-Ou1" secondAttribute="leading" constant="10" id="sD9-T3-qLK"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Default" rowHeight="50" id="3AH-QF-cek">
+                                <rect key="frame" x="0.0" y="98" width="600" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3AH-QF-cek" id="pPv-d1-014">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQo-iH-YLF">
+                                            <rect key="frame" x="35" y="17.5" width="30.5" height="14"/>
+                                            <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
+                                            <color key="textColor" red="0.066666666669999999" green="0.49803921569999998" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GQo-iH-YLF" firstAttribute="centerY" secondItem="pPv-d1-014" secondAttribute="centerY" id="0iZ-Kb-4TU"/>
+                                        <constraint firstItem="GQo-iH-YLF" firstAttribute="leading" secondItem="pPv-d1-014" secondAttribute="leading" constant="35" id="X1N-fM-cGo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nlq-a6-Ven" id="rem-ob-iE0"/>
+                            <outlet property="delegate" destination="nlq-a6-Ven" id="4pY-XU-dM2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="265-qU-PK8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1549" y="-387"/>
         </scene>
         <!--Item-->
         <scene sceneID="6LL-zH-hQ0">
