@@ -33,6 +33,21 @@
     return self;
 }
 
+- (instancetype)initWithObject:(GenericData *)object {
+    
+    self = [super init];
+    if (self) {
+        _identifier = object.identifier;
+        _numberOfStops = object.numberOfStops;
+        _arrivalTime = object.arrivalTime;
+        _departureTime = object.departureTime;
+        _priceInEuros = object.priceInEuros;
+        _providerLogoURL = object.providerLogoURL;
+        [self processInformation];
+    }
+    return self;
+}
+
 - (void)processInformation {
     
     if (_priceInEuros != nil) {

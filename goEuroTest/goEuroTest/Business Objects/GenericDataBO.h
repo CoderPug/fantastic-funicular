@@ -7,6 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GenericData.h"
+
+typedef NS_ENUM(NSInteger, GenericDataType) {
+    GenericDataType_Flight,
+    GenericDataType_Train
+};
 
 @interface GenericDataBO : NSObject
 
@@ -23,5 +29,6 @@
 @property (nonatomic, strong, readonly) NSString *processedSchedule;
 
 - (instancetype)initWithData:(NSDictionary *)data;
+- (instancetype)initWithObject:(GenericData *)object;
 
 @end

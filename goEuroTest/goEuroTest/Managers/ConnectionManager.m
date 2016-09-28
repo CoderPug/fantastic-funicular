@@ -7,6 +7,7 @@
 //
 
 #import "ConnectionManager.h"
+#import "StoreManager.h"
 
 static NSString *const CMFlightsURL = @"https://api.myjson.com/bins/w60i";
 static NSString *const CMTrainsURL = @"https://api.myjson.com/bins/3zmcy";
@@ -91,16 +92,11 @@ static NSString *const CMTrainsURL = @"https://api.myjson.com/bins/3zmcy";
     [self performRequestWithURL:CMFlightsURL
                      completion:^(NSArray *response) {
                          
-                         NSMutableArray *temporalResult = [[NSMutableArray alloc] init];
-                         for (int i=0; i<response.count; i++) {
-                             NSDictionary *temporalResponseElement = response[i];
-                             if (temporalResponseElement != nil) {
-                                 GenericDataBO *temporalElement = [[GenericDataBO alloc] initWithData:temporalResponseElement];
-                                 [temporalResult addObject:temporalElement];
-                             }
-                         }
+                         [[StoreManager sharedInstance] saveArray:response
+                                                         withType:GenericDataType_Flight];
                          
-                         completion(temporalResult);
+                         NSArray *result = [[StoreManager sharedInstance] retrieveGenericDataOfType:GenericDataType_Flight];
+                         completion(result);
                      }];
 }
 
