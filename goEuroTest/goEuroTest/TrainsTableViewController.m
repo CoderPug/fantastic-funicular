@@ -19,12 +19,23 @@
 @implementation TrainsTableViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    [self customize];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [self requestTrains];
+}
+
+#pragma mark - Customization
+
+- (void)customize {
     
     [self.tableView registerNib:[UINib nibWithNibName:@"GenericDataTableViewCell"
                                                bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"GenericDataTableViewCell"];
-    [self requestTrains];
 }
 
 #pragma mark - Request

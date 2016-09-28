@@ -79,6 +79,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelTitle" destination="xJ7-2o-NHX" id="tVb-dI-wgk"/>
                         <outlet property="scrollView" destination="6Zq-w8-mKm" id="nhg-BE-8m3"/>
                     </connections>
                 </viewController>
