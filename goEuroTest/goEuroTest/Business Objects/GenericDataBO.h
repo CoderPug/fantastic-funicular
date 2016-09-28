@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, GenericDataType) {
+    GenericDataType_Flight,
+    GenericDataType_Train
+};
+
 @interface GenericDataBO : NSObject
 
 @property (nonatomic, strong) NSNumber *identifier;
