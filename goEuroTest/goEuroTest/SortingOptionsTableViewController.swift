@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol SortingOptionsTableViewControllerDelegate {
-    optional func sortingOptionsTableViewControllerDidSelectOption(controller: SortingOptionsTableViewController, selection: SortingCriteriaType)
+    @objc optional func sortingOptionsTableViewControllerDidSelectOption(_ controller: SortingOptionsTableViewController, selection: SortingCriteriaType)
 }
 
 @objc class SortingOptionsTableViewController: UITableViewController {
@@ -23,46 +23,46 @@ import UIKit
         
         if (!UIAccessibilityIsReduceTransparencyEnabled()) {
             
-            tableView.backgroundColor = UIColor.clearColor()
-            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Light)
+            tableView.backgroundColor = UIColor.clear
+            let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
             let blurEffectView = UIVisualEffectView(effect: blurEffect)
             tableView.backgroundView = blurEffectView
             if let popover = navigationController?.popoverPresentationController {
-                popover.backgroundColor = UIColor.clearColor()
+                popover.backgroundColor = UIColor.clear
             }
-            tableView.separatorEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
+            tableView.separatorEffect = UIVibrancyEffect(blurEffect: blurEffect)
         }
     }
 
     // MARK: - Table view data source
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let temporalcell = tableView.dequeueReusableCellWithIdentifier("Default") {
-            temporalcell.backgroundColor = UIColor.clearColor()
+        if let temporalcell = tableView.dequeueReusableCell(withIdentifier: "Default") {
+            temporalcell.backgroundColor = UIColor.clear
             if let labelText = temporalcell.viewWithTag(1) as? UILabel {
                 labelText.text = arrayContent[indexPath.row]
             }
             return temporalcell
         }
-        return UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "default")
+        return UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "default")
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var selectedCriteria: SortingCriteriaType?
         switch indexPath.row {
         case 0:
-            selectedCriteria = SortingCriteriaType.Departure
+            selectedCriteria = SortingCriteriaType.departure
             break
         case 1:
-            selectedCriteria = SortingCriteriaType.Arrival
+            selectedCriteria = SortingCriteriaType.arrival
             break
         case 2:
-            selectedCriteria = SortingCriteriaType.Duration
+            selectedCriteria = SortingCriteriaType.duration
             break
         default:
-            selectedCriteria = SortingCriteriaType.Departure
+            selectedCriteria = SortingCriteriaType.departure
             break
         }
         
@@ -71,7 +71,7 @@ import UIKit
         }
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
     }
 }
